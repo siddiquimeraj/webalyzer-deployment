@@ -1,0 +1,49 @@
+No. of test URL : 50
+
+Facebook :
+
+Facebook Profile Workers Excuted : 49
+Facebook Page Found : 45
+Unable To search : 4 
+Partial Data Found : 1 (Unable to find some records but got some data)
+
+Google Plus:
+
+Google Profile Worker Executed : 50
+No result Found : 12 (Unknown Issue) ---Issue 
+Sucessfull Found Data : 27
+Unable to Find Google Plus Profile : 11 
+
+
+Twitter Result: 
+
+Twitter Profile Worker Executed : 50
+Successfully found data : 40
+Unable to find data for : 8
+Issue occured while finding :2
+
+Page Links Analysis :
+
+Successfull found data: 50
+
+
+Whois
+
+Successfully Found data for : 49
+Unable to found :1
+Reason For fail : Unable to find on whois.com
+
+Google PageSpeed
+
+Sucessfully found data for : 50
+
+
+PageDetail extract 
+
+sucessfull fetched : 48
+failed : 2
+youtube.com, hao123.com -> both empty reply from server
+
+Page Meta tags extraction
+
+Sucess : 50
