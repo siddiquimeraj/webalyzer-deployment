@@ -35,9 +35,6 @@ class AnalyzerController extends Controller {
 	public function result(Request $request, $job_id) {
 		$domain_analysis = (string) AnalyzerResult::getDetails($job_id);
 		$url_data = json_decode($domain_analysis, true)[0];
-		echo "<pre>";
-		var_dump($url_data);
-		die();
 		return view('frontend.analyzer.result')->with("records", $url_data);
 	}
 

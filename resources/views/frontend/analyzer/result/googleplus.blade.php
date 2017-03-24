@@ -1,4 +1,5 @@
 <div class="container">
+    @if($records['google_plus_result']['status']==2)
     @if(isset($records['google_plus_result']['result']))
     <div class="row row-offcanvas row-offcanvas-right">
         @if(isset($records['google_plus_result']['result']['details']))
@@ -50,6 +51,10 @@
     @endif
     @if($records['google_plus_result']['error_code']!=0)
         <p>{{$records['google_plus_result']['error']}}</p>
+    @endif
+
+     @else
+        <p>Wait ... Loading...</p>
     @endif
 </div>
 

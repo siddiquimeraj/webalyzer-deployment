@@ -1,4 +1,6 @@
 <table class="table table-striped table-hover">
+@if($records["request_params"]["google_speed_check"]==1)
+    @if($records['google_speed_result']['status']==2)
 	@if($records['google_speed_result']['error_code']==0)
 		@if(isset($records['google_speed_result']['result']))
 		<tr>
@@ -28,5 +30,10 @@
 		@endif
 		@endif
 	@endif
-
+	@else
+	<p>Please wait .... Loading...</p>
+	@endif
+@else
+<p>You didn't asked for this</p>
+@endif
 </table>

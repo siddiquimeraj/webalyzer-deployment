@@ -1,4 +1,6 @@
 <div class="container">
+@if($records["request_params"]["twitter_check"]==1)
+@if($records['twitter_result']['status']==2)
     @if($records['twitter_result']['error_code']==0)
     <div class="row row-offcanvas row-offcanvas-right">
 
@@ -42,5 +44,11 @@
     		<p>No data found and i don't know why</p>
     	@endif
     @endif
+     @else
+        <p>Wait ... Loading...</p>
+    @endif
+@else
+<p>Sorry but you didn't requested this</p>
+@endif
 </div>
 <!--/.container-->

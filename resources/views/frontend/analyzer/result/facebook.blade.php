@@ -1,5 +1,6 @@
 <div class="container">
 @if($records["request_params"]["facebook_check"]==1)
+    @if($records['facebook_result']['status']==2)
     @if(isset($records['facebook_result']['result']))
     <div class="row row-offcanvas row-offcanvas-right">
 
@@ -77,6 +78,9 @@
             <p>No data found no error found .. write better algo</p>
         @endif
     <!--/row-->
+    @endif
+    @else
+        <p>Wait ... Loading...</p>
     @endif
 @else
 <p>You did not make a request for this</p>
