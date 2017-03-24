@@ -1,6 +1,8 @@
 <table class="table table-striped table-hover">
+@if($records["request_params"]["whois_check"]==1)
+@if(isset($records['whois_result']['error_code']))
 	@if($records['whois_result']['error_code']==0)
-		@if(!empty($records['whois_result']['result']))
+		@if(isset($records['whois_result']['result']))
 			@foreach($records['whois_result']['result'] as $key => $value)
 			<tr>
 				<th>{{$key}}</th>
@@ -13,5 +15,10 @@
 	@else
 	<p>{{$records['whois_result']['error']}}</p>
 	@endif
-
+@else
+<p>No whois record in database for this domain</p>
+@endif
+@else
+<p>Yo did not made request for this data</p>
+@endif
 </table>

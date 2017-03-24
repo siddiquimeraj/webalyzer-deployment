@@ -28,7 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
 		*/
 		Route::patch('profile/update', 'ProfileController@update')->name('profile.update');
 	});
-
 	Route::group(['namespace' => 'Analyzer', 'as' => 'analyzer.'], function () {
 		/**
 		 *Analyzer Request
@@ -38,7 +37,9 @@ Route::group(['middleware' => 'auth'], function () {
 		/**
 		 *Analyzer Request
 		 */
-		Route::get('analysis/{domain_name}', 'AnalyzerController@result')->name('result');
+		Route::get('analysis/{job_id}', 'AnalyzerController@result')->name('result');
+
+		Route::post('/analyzer', 'AnalyzerController@index');
 
 	});
 

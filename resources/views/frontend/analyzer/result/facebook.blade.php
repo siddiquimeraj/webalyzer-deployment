@@ -1,5 +1,5 @@
 <div class="container">
-
+@if($records["request_params"]["facebook_check"]==1)
     @if(isset($records['facebook_result']['result']))
     <div class="row row-offcanvas row-offcanvas-right">
 
@@ -78,6 +78,8 @@
         @endif
     <!--/row-->
     @endif
-
+@else
+<p>You did not make a request for this</p>
+@endif
 </div>
 <!--/.container-->
