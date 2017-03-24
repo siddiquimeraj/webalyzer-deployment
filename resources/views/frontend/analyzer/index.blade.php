@@ -6,6 +6,9 @@
             <div class="panel-heading">Analyzer Request</div>
     <!--form -->
         <div class="panel-body">
+        @if(isset($message))
+            <span>{{$message}}</span>
+        @endif
 {{ Form::open(array('url' => '/analyzer')) }}
     <div class="form-group">
       <label class="control-label col-sm-3" for="email">Website Url:</label>

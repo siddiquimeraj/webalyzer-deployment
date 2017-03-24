@@ -18,13 +18,18 @@ class AnalyzerController extends Controller {
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
 	public function index(Request $request) {
+		$message = "";
 		if (!empty($request->input('domain_name'))) {
 			$all_data = $request->all();
 			unset($all_data['_token']);
 			$post_result = $this->sendToNodeApi($all_data);
+			$post_body = json_decode($post_result);
+			if (isset($post_body->msg)) {
+				$message = $post_body->msg;
+			}
 		}
 		$analyzer_results = AnalyzerRequest::paginate(10);
-		return view('frontend.analyzer.index', compact('analyzer_results'));
+		return view('frontend.analyzer.index', compact('analyzer_results', 'message'));
 	}
 
 	public function result(Request $request, $job_id) {
