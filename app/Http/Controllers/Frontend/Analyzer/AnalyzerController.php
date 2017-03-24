@@ -40,7 +40,7 @@ class AnalyzerController extends Controller {
 
 	public function sendToNodeApi($form_data) {
 		$client = new Client();
-		$res = $client->request('POST', 'http://localhost:3301/analyzer', [
+		$res = $client->request('POST', 'http://158.69.0.135:8090/analyzer', [
 			'form_params' => $form_data,
 		]);
 		return $res->getBody()->getContents();
